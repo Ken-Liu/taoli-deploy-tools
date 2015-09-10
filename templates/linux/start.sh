@@ -5,7 +5,7 @@ APP_PATH=/opt/$APPNAME
 BUNDLE_PATH=$APP_PATH/current
 ENV_FILE=$APP_PATH/config/env.list
 PORT=8000
-APP_ROOT_URL=<%= ROOT_URL %>
+APP_ROOT_URL=<%= root_url %>
 USE_LOCAL_MONGO=<%= useLocalMongo? "1" : "0" %>
 
 # Remove previous version of the app, if exists
