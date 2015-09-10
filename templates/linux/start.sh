@@ -5,7 +5,7 @@ APP_PATH=/opt/$APPNAME
 BUNDLE_PATH=$APP_PATH/current
 ENV_FILE=$APP_PATH/config/env.list
 PORT=8000
-APP_ROOT_URL=<%= root_url %>
+APP_VIRTUAL_URL=<%= virtual_host %>
 USE_LOCAL_MONGO=<%= useLocalMongo? "1" : "0" %>
 
 # Remove previous version of the app, if exists
@@ -22,7 +22,7 @@ set -e
 if [ "$USE_LOCAL_MONGO" == "1" ]; then
   docker run \
     -d \
-    -e VIRTUAL_HOST=${APP_ROOT_URL:7} \
+    -e VIRTUAL_HOST=$APP_VIRTUAL_URL \
     --restart=always \
     --publish=$PORT:80 \
     --volume=$BUNDLE_PATH:/bundle \
