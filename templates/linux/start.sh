@@ -19,7 +19,7 @@ set +e
 docker pull meteorhacks/meteord:base
 set -e
 
-if [ "$USE_LOCAL_MONGO" == "1" ]; then
+if [ "$USE_LOCAL_MONGO" == "0" ]; then
   docker run \
     -d \
     -e VIRTUAL_HOST=$APP_VIRTUAL_URL \
